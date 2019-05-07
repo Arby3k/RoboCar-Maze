@@ -1,0 +1,97 @@
+# depslib dependency file v1.0
+1556922382 source:/home/pi/Desktop/Car/Car/main.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+	<cmath>
+	<vector>
+	<thread>
+	<pigpio.h>
+	<stdio.h>
+	<termios.h>
+	<unistd.h>
+	<fcntl.h>
+	<raspicam/raspicam_cv.h>
+	"raspicam_cv.h"
+	"opencv.hpp"
+	"CCar.h"
+	<opencv2/opencv.hpp>
+
+1487414578 /home/pi/Desktop/Car/Car/raspicam_cv.h
+	<opencv2/core/core.hpp>
+	<opencv2/highgui/highgui.hpp>
+
+1411092226 /usr/include/opencv2/opencv.hpp
+	"opencv2/core/core_c.h"
+	"opencv2/core/core.hpp"
+	"opencv2/flann/miniflann.hpp"
+	"opencv2/imgproc/imgproc_c.h"
+	"opencv2/imgproc/imgproc.hpp"
+	"opencv2/photo/photo.hpp"
+	"opencv2/video/video.hpp"
+	"opencv2/features2d/features2d.hpp"
+	"opencv2/objdetect/objdetect.hpp"
+	"opencv2/calib3d/calib3d.hpp"
+	"opencv2/ml/ml.hpp"
+	"opencv2/highgui/highgui_c.h"
+	"opencv2/highgui/highgui.hpp"
+	"opencv2/contrib/contrib.hpp"
+
+1557034229 source:/home/pi/Desktop/Car/Car/CCar.cpp
+	"CCar.h"
+	<iostream>
+	<cstdlib>
+	<string>
+	<thread>
+	<mutex>
+	<iomanip>
+	<cmath>
+	<vector>
+	<pigpio.h>
+	<stdio.h>
+	<termios.h>
+	<unistd.h>
+	<fcntl.h>
+	<raspicam/raspicam_cv.h>
+	"raspicam_cv.h"
+	"server.h"
+	"opencv.hpp"
+	<opencv2/opencv.hpp>
+
+1557032429 /home/pi/Desktop/Car/Car/CCar.h
+	"opencv.hpp"
+	<iostream>
+	<cstdlib>
+	<string>
+	<cmath>
+	<vector>
+	<pigpio.h>
+	<stdio.h>
+	<termios.h>
+	<unistd.h>
+	<fcntl.h>
+	<raspicam/raspicam_cv.h>
+	"raspicam_cv.h"
+	"opencv.hpp"
+	<opencv2/opencv.hpp>
+
+1551247985 /home/pi/Desktop/Car/Car/server.h
+	<iostream>
+	<string>
+	<mutex>
+	<vector>
+	"opencv.hpp"
+	<opencv2/opencv.hpp>
+
+1551247630 source:/home/pi/Desktop/Car/Car/server.cpp
+	"server.h"
+	"Winsock2.h"
+	<sys/types.h>
+	<stdlib.h>
+	<unistd.h>
+	<sys/socket.h>
+	<sys/ioctl.h>
+	<fcntl.h>
+	<netinet/in.h>
+	<netdb.h>
+
