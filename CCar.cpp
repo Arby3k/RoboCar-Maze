@@ -36,9 +36,11 @@
 
 #define MotorA_F 27
 #define MotorA_R 17
+#define MotorA_PWM 12
+
 #define MotorB_F 4
 #define MotorB_R 25
-
+#define MotorB_PWM 13
 
 
 #define System_Led 26
@@ -101,10 +103,10 @@ CCar::CCar()
     gpioSetMode(MotorB_R, PI_OUTPUT);
 
     // Motor A PWM
-    gpioSetMode(12, PI_OUTPUT);
+    //gpioSetMode(MotorA_PWM, PI_OUTPUT);
 
     // Motor B PWM
-    gpioSetMode(13, PI_OUTPUT);
+    //gpioSetMode(MotorB_PWM, PI_OUTPUT);
 
     // System LED
     gpioSetMode(System_Led, PI_OUTPUT);
@@ -158,7 +160,7 @@ void CCar::update()
 
     if(keyPress == 'm')
     {
-        gpioWrite(26, 1);
+        gpioWrite(System_Led, 1);
         keyPress = 'z';
         //commands.clear();
         do
