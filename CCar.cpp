@@ -34,6 +34,17 @@
 #define SO_HIGH 245
 #define VO_HIGH 255
 
+#define MotorA_F 27
+#define MotorA_R 17
+#define MotorB_F 4
+#define MotorB_R 25
+
+
+
+#define System_Led 26
+#define Opt_Sen 10
+
+
 int iLowH = 0;
 int iHighH = 179;
 
@@ -78,16 +89,16 @@ CCar::CCar()
 	}
 
     // Motor A Forward
-    gpioSetMode(27, PI_OUTPUT);
+    gpioSetMode(MotorA_F, PI_OUTPUT);
 
     // Motor A Reverse
-    gpioSetMode(17, PI_OUTPUT);
+    gpioSetMode(MotorA_R, PI_OUTPUT);
 
     // Motor B Forward
-    gpioSetMode(4, PI_OUTPUT);
+    gpioSetMode(MotorB_F, PI_OUTPUT);
 
     // Motor B Reverse
-    gpioSetMode(25, PI_OUTPUT);
+    gpioSetMode(MotorB_R, PI_OUTPUT);
 
     // Motor A PWM
     gpioSetMode(12, PI_OUTPUT);
@@ -96,10 +107,10 @@ CCar::CCar()
     gpioSetMode(13, PI_OUTPUT);
 
     // System LED
-    gpioSetMode(26, PI_OUTPUT);
+    gpioSetMode(System_Led, PI_OUTPUT);
 
     // Optical Sensor
-    gpioSetMode(10, PI_INPUT);
+    gpioSetMode(Opt_Sen, PI_INPUT);
 
     gpioWrite(12, 1);
     gpioWrite(13, 1);
@@ -170,34 +181,34 @@ void CCar::update()
                 {
                     case 0:
                         //cout << "PINK/ORANGE" << endl;
-                        gpioWrite(27, 0);
-                        gpioWrite(17, 0);
-                        gpioWrite(4, 0);
-                        gpioWrite(25, 0);
+                        gpioWrite(MotorA_F, 0);
+                        gpioWrite(MotorA_R, 0);
+                        gpioWrite(MotorB_F, 0);
+                        gpioWrite(MotorB_R, 0);
                         delay(500);
-                        gpioWrite(27,1);
-                        gpioWrite(17,0);
-                        gpioWrite(4,1);
-                        gpioWrite(25,0);
+                        gpioWrite(MotorA_F,1);
+                        gpioWrite(MotorA_R,0);
+                        gpioWrite(MotorB_F,1);
+                        gpioWrite(MotorB_R,0);
                         break;
                     case 1:
                         //cout << "PURPLE/GREEN" << endl;
-                        gpioWrite(27, 0);
-                        gpioWrite(17, 0);
-                        gpioWrite(4, 0);
-                        gpioWrite(25, 0);
+                        gpioWrite(MotorA_F, 0);
+                        gpioWrite(MotorA_R, 0);
+                        gpioWrite(MotorB_F, 0);
+                        gpioWrite(MotorB_R, 0);
                         delay(500);
-                        gpioWrite(27,0);
-                        gpioWrite(17,1);
-                        gpioWrite(4,0);
-                        gpioWrite(25,1);
+                        gpioWrite(MotorA_F,0);
+                        gpioWrite(MotorA_R,1);
+                        gpioWrite(MotorB_F,0);
+                        gpioWrite(MotorB_R,1);
                         break;
                     case 2:
                         //cout << "NOTHING" << endl;
-                        gpioWrite(27,0);
-                        gpioWrite(17,1);
-                        gpioWrite(4,1);
-                        gpioWrite(25,0);
+                        gpioWrite(MotorA_F, 0);
+                        gpioWrite(MotorA_R, 0);
+                        gpioWrite(MotorB_F, 0);
+                        gpioWrite(MotorB_R, 0);
                         break;
                 }
                 state = GET_IMAGE;
@@ -205,7 +216,7 @@ void CCar::update()
             //}
         }while(keyPress != 'm');
         keyPress = 'z';
-        gpioWrite(26, 0);
+        gpioWrite(System_Led, 0);
             //commands.clear();
     }
     else
